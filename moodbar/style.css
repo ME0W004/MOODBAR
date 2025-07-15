@@ -1,0 +1,277 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f6f8f6;
+font-family: 'Vazirmatn', 'Segoe UI', Tahoma, sans-serif;
+  color: #1f1f1f;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
+}
+
+/* ---------- لوگو ---------- */
+.logo-container {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.logo-container img {
+  width: 160px;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+.logo-container img:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+/* ---------- عنوان اصلی ---------- */
+h1 {
+  font-size: 2.6rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #2c3e50;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- دکمه‌های دسته‌بندی ---------- */
+.menu-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.menu-buttons a {
+  background-color: #f1f3f1;
+  border: 1px solid #d0d6d0;
+  padding: 22px 16px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #2e2e2e;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.menu-buttons a:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  background-color: #f9fdf9;
+}
+
+.menu-buttons a img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 12px;
+  filter: invert(0) brightness(0) contrast(100%);
+}
+
+/* ---------- دکمه بازگشت ---------- */
+.back-button {
+  display: inline-block;
+  margin: 30px 0;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #3e5870, #2c3e50); /* گرادینت متناسب */
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 6px 12px rgba(44, 62, 80, 0.25);
+  border: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* افکت نور هنگام هاور */
+.back-button::before {
+  content: "";
+  position: absolute;
+  top: -60%;
+  left: -60%;
+  width: 220%;
+  height: 220%;
+  background: rgba(255, 255, 255, 0.15);
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+.back-button:hover::before {
+  top: 30%;
+  left: 30%;
+}
+
+/* افکت هاور کلی */
+.back-button:hover {
+  transform: scale(1.06);
+  box-shadow: 0 10px 22px rgba(44, 62, 80, 0.3);
+}
+
+/* کلیک */
+.back-button:active {
+  transform: scale(0.94);
+  box-shadow: 0 4px 10px rgba(44, 62, 80, 0.2);
+}
+
+
+
+
+/* ---------- ریسپانسیو ---------- */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .menu-buttons a {
+    padding: 18px 12px;
+    font-size: 1rem;
+    border-radius: 12px;
+  }
+
+  .menu-buttons a img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+
+  .back-button {
+    padding: 10px 18px;
+    font-size: 0.95rem;
+    border-radius: 10px;
+    margin: 20px 0;
+  }
+}
+
+
+   h1, h2 {
+      text-align: center;
+      margin-top: 40px;
+    }
+    /* کانتینر هر بخش */
+.section {
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+  padding: 0 15px;
+}
+
+/* تیتر هر بخش */
+.section h1, .section h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 24px;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+/* هر آیتم لیست */
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  border-bottom: 1px solid #d8dee3;
+  transition: background-color 0.3s ease;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  background: #f8fafa;
+  box-shadow: 0 2px 6px rgba(44, 62, 80, 0.05);
+  cursor: default;
+}
+
+.item:hover {
+  background: #edf2f5;
+  box-shadow: 0 5px 15px rgba(44, 62, 80, 0.1);
+}
+
+/* بخش چپ اسم‌ها */
+.item-left {
+  display: flex;
+  flex-direction: column;
+  max-width: 70%;
+  gap: 4px;
+}
+
+/* اسم انگلیسی */
+.item-left .en {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2c3e50; /* رنگ اصلی */
+  user-select: text;
+}
+
+/* اسم فارسی زیر انگلیسی */
+.item-left .fa {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #5c6f81; /* نسخه روشن‌تر رنگ اصلی */
+  user-select: text;
+}
+
+/* بخش راست قیمت‌ها */
+.item-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+  min-width: 110px;
+}
+
+/* قیمت انگلیسی */
+.item-right .en-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2c3e50;
+  user-select: text;
+}
+
+/* قیمت فارسی */
+.item-right .fa-price {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #5c6f81;
+  user-select: text;
+}
+
+/* ریسپانسیو موبایل */
+@media (max-width: 600px) {
+  .item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 16px;
+  }
+
+  .item-left {
+    max-width: 100%;
+  }
+
+  .item-right {
+    align-self: flex-start;
+    min-width: auto;
+    margin-top: 8px;
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .item-right .en-price,
+  .item-right .fa-price {
+    font-size: 1rem;
+  }
+}
